@@ -31,3 +31,7 @@ code {
 .rotate180{
   transform: rotate(180deg);
 }
+.slick-prev {
+  display: none !important;
+}
+.slick-slide {padding: 0 7px;}

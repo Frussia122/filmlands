@@ -11,9 +11,13 @@ import {
   Favorites,
   Wrapper,
  } from './styled';
+ 
 import { Latest, latestFilms } from './films';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { settings } from './sliderSettings';
+
+
+
 const LatestMovies: React.FC = () => {
     return (
        <SliderWrapper {...settings}>
