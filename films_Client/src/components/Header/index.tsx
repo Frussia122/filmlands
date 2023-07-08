@@ -1,8 +1,8 @@
 import { Wrapper, Logo, Controls } from './styled';
 import logo from 'assets/Header/logo.svg';
 import HeaderNav from 'components/Nav';
-import HeaderSearch from 'components/Search';
-import HeaderProfile from 'components/Profile';
+import HeaderSearch from 'UI/Search';
+import HeaderProfile from 'UI/Profile';
 
 const Header: React.FC = () => {
     
