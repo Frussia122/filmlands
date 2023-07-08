@@ -1,16 +1,50 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideIn = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
 
 export const NavLinks = styled.ul`
-    list-style: none;
-    display: flex;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  transition: all 0.2s linear;
+  opacity: 1;
+  
+  @media (max-width: 800px) {
+    position: absolute;
+    padding: 20px;
+    left: -100%;
+    top: 40px;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: black;
+    z-index: 1000;
+  }
+
+  &.menuActive {
+    animation: ${slideIn} 0.5s forwards;
+  }
 `;
 
 export const LinkItem = styled.li`
-    margin-right: 20px;
+  margin-right: 20px;
 `;
 
 export const Link = styled.a`
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  
+  @media (max-width: 800px) {
+    font-size: 24px;
+  }
 `;
