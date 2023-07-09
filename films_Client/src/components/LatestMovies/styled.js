@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from "react-slick";
 
 export const SliderWrapper = styled(Slider)`
@@ -24,6 +23,7 @@ export const Film = styled.div`
     margin-left: 0px;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     width: 99%;
     height: 480px;
     border-radius: 10px;
@@ -100,13 +100,14 @@ export const Description = styled.p`
     font-style: normal;
     font-weight: 400;
     line-height: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 10; 
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
     @media (max-width: 700px) {
         font-size: 14px;
-        display: -webkit-box;
-        -webkit-line-clamp: 10; /* Количество строк, которые должны отображаться */
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-        overflow: hidden;
     }
 
 `;
@@ -120,39 +121,7 @@ export const Actions = styled.div`
     align-items: center;
 `
 
-export const Info = styled.button`
-    border-radius: 20px;
-    background: #053BA3;
-    border: none;
-    color: white;
-    padding: 8px 25px;
-    font-family: Open Sans;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-right: 10px;
-    @media (max-width: 1343px) {
-        font-size: 20px;
-     } 
-     @media (max-width: 700px) {
-        font-size: 10px;
-    }
-`;
 
-export const Favorites = styled(FontAwesomeIcon)`
-    border-radius: 50%;
-    background: #053BA3;
-    padding: 9px;
-    @media (max-width: 1343px) {
-        padding: 13px;
-        font-size: 22px;
-     } 
-     @media (max-width: 700px) {
-        padding: 8px;
-        font-size: 14px;
-    }
-`;
 
 export const Wrapper = styled.div`
     width: 100%;

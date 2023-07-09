@@ -1,11 +1,11 @@
 import { SampleNextArrow } from 'components/SlidesArrow/index'
 
 export const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 2,
-    slidesToScroll: 1,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     autoplay: true,
     autoplaySpeed: 10000,
     nextArrow: <SampleNextArrow />,
@@ -13,7 +13,8 @@ export const settings = {
       {
         breakpoint: 1353,
         settings: {
-          slidesToShow: 1,
+          dots: false,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
         }

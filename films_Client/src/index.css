@@ -35,3 +35,26 @@ code {
 .menuActive{
   left: 0 !important;
 }
+.slick-dots .slick-active {
+  width: 50px !important;
+  height: 12px !important;
+}
+.slick-dots {
+  position: absolute !important;
+  bottom: 50px;
+  left: -40.8%!important;
+}
+
+.slick-dots li {
+  border-radius: 20px;
+  background: #053BA3;
+  width: 20px;
+  height: 12px;
+}
+
+.slick-dots li::before {
+  content: none;
+}
+.slick-dots li button::before {
+  content: none;
+}

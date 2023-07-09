@@ -7,14 +7,13 @@ import {
   Description,
   Content,
   Actions,
-  Info,
-  Favorites,
   Wrapper,
  } from './styled';
  
 import { Latest, latestFilms } from './films';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { settings } from './sliderSettings';
+import AddToFavorites from 'UI/AddToFavorites';
+import MoreInfoButton from 'UI/MoreInfoButton';
 
 
 
@@ -33,8 +32,8 @@ const LatestMovies: React.FC = () => {
                   <Description>{item.description}</Description>
                 </Content>
                 <Actions>
-                  <Info>More info</Info>
-                  <Favorites icon={faHeart} />
+                  <MoreInfoButton />
+                  <AddToFavorites />
                 </Actions>
               </Information>
               </Film>

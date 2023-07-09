@@ -25,7 +25,6 @@ export const NavLinks = styled.ul`
     top: 40px;
     flex-direction: column;
     width: 100%;
-    align-items: center;
     background-color: black;
     z-index: 1000;
   }
@@ -37,6 +36,12 @@ export const NavLinks = styled.ul`
 
 export const LinkItem = styled.li`
   margin-right: 20px;
+
+  @media(max-width: 800px) {
+    padding: 10px 0;
+    border-bottom: 1px solid #252424;
+    margin-bottom: 2px;
+  }
 `;
 
 export const Link = styled.a`
