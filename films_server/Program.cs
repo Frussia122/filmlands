@@ -1,28 +1,51 @@
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<MovieDb>(options =>
+{
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDBConnection"));
+});
+
 var app = builder.Build();
 
-var Movies = new List<Movie>();
-var Series = new List<Series>();
+List<Series> Series = new List<Series>();
 
-app.MapGet("/movies", () => Movies);
-app.MapGet("/movies/{id}", (int id) => Movies.FirstOrDefault(h => h.Id == id));
-app.MapPost("/movies",(Movie movie) => Movies.Add(movie));
-app.MapPut("/movies", (Movie movie) =>
+
+
+app.MapGet("/movies", async (MovieDb db) => await db.Movies.ToListAsync());
+
+app.MapGet("/movies/{id}", async (int id, MovieDb db) =>
+await db.Movies.FirstOrDefaultAsync(h => h.Id == id) 
+is Movie movie 
+? Results.Ok(movie) 
+: Results.NotFound());
+
+app.MapPost("/movies", async ([FromBody] Movie movie,  MovieDb db) =>
 {
-    var index = Movies.FindIndex(h =>  h.Id == movie.Id);
-    if(index < 0)
-    {
-        throw new Exception("Not Found");
-    }
+    db.Movies.Add(movie);
+    await db.SaveChangesAsync();
+    return Results.Created($"/movies/{movie.Id}", movie);
 });
-app.MapDelete("movies/{id}",(int id) =>
+app.MapPut("/movies",async ([FromBody]Movie movie, [FromServices] MovieDb db) =>
 {
-    var index = Movies.FindIndex(h => h.Id == id);
-    if (index < 0)
-    {
-        throw new Exception("Not Found");
-    }
-    Movies.RemoveAt(index);
+    var movieFromDb = await db.Movies.FindAsync(new object[] {movie.Id});
+    if(movieFromDb == null) return Results.NotFound();
+    movieFromDb.Title = movie.Title;
+    movieFromDb.Description = movie.Description;
+    movieFromDb.ReleaseDate = movie.ReleaseDate;
+    await db.SaveChangesAsync();
+    return Results.NoContent();
+
+});
+app.MapDelete("movies/{id}",async (int id,MovieDb db) =>
+{
+    var movieFromDb = await db.Movies.FindAsync(new object[] {id});
+    if (movieFromDb == null) return Results.NotFound();
+    db.Movies.Remove(movieFromDb);
+    await db.SaveChangesAsync();
+    return Results.NoContent();
 });
 
 app.MapGet("/series", () => Series);
@@ -45,8 +68,15 @@ app.MapDelete("series/{id}", (int id) =>
     }
     Series.RemoveAt(index);
 });
+
+app.UseHttpsRedirection();
 app.Run();
 
+public class MovieDb : DbContext
+{
+    public MovieDb(DbContextOptions<MovieDb> options) : base(options) { }
+    public DbSet<Movie> Movies => Set<Movie>();
+}
 
 public class Movie
 {
