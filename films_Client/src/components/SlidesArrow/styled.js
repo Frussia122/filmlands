@@ -21,9 +21,11 @@ export const Arrow = styled.div`
         background-color: rgba(5, 59, 163, 0.7)
     }
 
+
     @media(max-width: 820px) {
         right: 20px;
     }
+
     
 `;
 export const Icon = styled.img`

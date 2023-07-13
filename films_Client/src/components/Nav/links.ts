@@ -10,17 +10,21 @@ export type NavItem = {
       url: '/',
     },
     {
-      title: 'Popular Films',
-      url: '/popular',
+      title: 'Films',
+      url: '/films',
     },
     {
-      title: 'Latest Films',
-      url: '/latest',
+      title: 'TV Series',
+      url: '/series',
     }
     ,
     {
-      title: 'My List',
-      url: '/favorites',
+      title: 'Kids',
+      url: '/kids',
+    },
+    {
+      title: 'TV',
+      url: '/tv',
     }
   ];
   

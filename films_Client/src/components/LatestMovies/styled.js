@@ -14,7 +14,7 @@ export const SliderWrapper = styled(Slider)`
         margin-left: -4px;
     }
     @media(max-width: 700px) {
-        width: 113%;
+        width: 107%;
         margin-left: -35px;
     }
 `;
