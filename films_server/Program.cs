@@ -1,50 +1,47 @@
+using films_server.Data;
 using Microsoft.AspNetCore.Mvc;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MovieDb>(options =>
 {
-
     options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDBConnection"));
 });
 
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 var app = builder.Build();
 
 List<Series> Series = new List<Series>();
 
 
 
-app.MapGet("/movies", async (MovieDb db) => await db.Movies.ToListAsync());
+app.MapGet("/movies", async (IMovieRepository repository) =>
+     Results.Ok(await repository.GetMoviesAsync()));
 
-app.MapGet("/movies/{id}", async (int id, MovieDb db) =>
-await db.Movies.FirstOrDefaultAsync(h => h.Id == id) 
+app.MapGet("/movies/{id}", async (int id, IMovieRepository repository) =>
+await repository.GetMovieAsync(id) 
 is Movie movie 
 ? Results.Ok(movie) 
 : Results.NotFound());
 
-app.MapPost("/movies", async ([FromBody] Movie movie,  MovieDb db) =>
+app.MapPost("/movies", async ([FromBody] Movie movie, IMovieRepository repository) =>
 {
-    db.Movies.Add(movie);
-    await db.SaveChangesAsync();
+    await repository.InsertMovieAsync(movie);
+    await repository.SaveAsync();
     return Results.Created($"/movies/{movie.Id}", movie);
 });
-app.MapPut("/movies",async ([FromBody]Movie movie, [FromServices] MovieDb db) =>
+app.MapPut("/movies",async ([FromBody] Movie movie, [FromServices] IMovieRepository repository) =>
 {
-    var movieFromDb = await db.Movies.FindAsync(new object[] {movie.Id});
-    if(movieFromDb == null) return Results.NotFound();
-    movieFromDb.Title = movie.Title;
-    movieFromDb.Description = movie.Description;
-    movieFromDb.ReleaseDate = movie.ReleaseDate;
-    await db.SaveChangesAsync();
+    await repository.UpdateMovieAsync(movie);
+    await repository.SaveAsync();
     return Results.NoContent();
 
 });
-app.MapDelete("movies/{id}",async (int id,MovieDb db) =>
-{
-    var movieFromDb = await db.Movies.FindAsync(new object[] {id});
-    if (movieFromDb == null) return Results.NotFound();
-    db.Movies.Remove(movieFromDb);
-    await db.SaveChangesAsync();
+app.MapDelete("/movies/{id}",async (int id,IMovieRepository repository) =>
+{   
+    await repository.DeleteMovieAsync(id);
+    await repository.SaveAsync();
     return Results.NoContent();
 });
 
@@ -72,30 +69,5 @@ app.MapDelete("series/{id}", (int id) =>
 app.UseHttpsRedirection();
 app.Run();
 
-public class MovieDb : DbContext
-{
-    public MovieDb(DbContextOptions<MovieDb> options) : base(options) { }
-    public DbSet<Movie> Movies => Set<Movie>();
-}
-
-public class Movie
-{
-    public int Id { get; set; }
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public string ReleaseDate { get; set; }
-}
-
-public class Season : Movie
-{
-    public int SeasonNumber { get; set; }
-    public List<Movie> Episodes { get; set; }
-
-}
 
 
-public class Series: Movie
-{
-    public int  SeasonsCount { get; set; }
-    public List<Season> Seasons { get; set; }
-}
