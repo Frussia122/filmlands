@@ -7,14 +7,17 @@ export const Content = styled.div`
 
     @media(max-width: 1353px) {
         ${SliderWrapper} {
-            max-width: 680px;
+            max-width: 1000px;
         }
+    }
+    @media(max-width: 1100px) {
+        padding-left: 0;
     }
     @media(max-width: 700px){
         ${SliderWrapper} {
             max-width: 113%;        
         }
-        padding-left: 0;
+       
 
     }
     .slick-next {

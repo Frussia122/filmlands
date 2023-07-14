@@ -17,8 +17,8 @@ function App() {
       <Route path='/latest' element={<Latest />}/>
       <Route path='/favorites' element={<MyList />}/>
     </Routes>
-    {/* <MovieFreedom />
-    <Footer /> */}
+    <MovieFreedom />
+    <Footer /> 
     </>
   );
 }

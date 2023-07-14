@@ -15,16 +15,16 @@ export const settings = (scroll, show) => (
         breakpoint: 1353,
         settings: {
           dots: false,
-          slidesToShow: show-2,
+          slidesToShow: show-1 ,
           slidesToScroll: 1,
           infinite: true,
         }
       },
       {
-        breakpoint: 900,
+        breakpoint: 1100,
         settings: {
           dots: false,
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
         }

@@ -4,7 +4,7 @@ export const Categories = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
-    @media(max-width: 900px) {
+    @media(max-width: 1100px) {
         display: flex;
         align-items: center;
         overflow-x: scroll;

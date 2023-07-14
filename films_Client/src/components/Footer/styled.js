@@ -6,10 +6,19 @@ export const Wrapper = styled.section`
     display: flex;
     justify-content: space-between;
     padding: 37px 0 87px 0;
+
+    @media(max-width: 900px) {
+        flex-direction: column;
+    }
+    @media(max-width: 550px) {
+        padding-bottom: 20px;
+    }
 `;
 
 export const Connect = styled.div`
-
+        @media(max-width: 550px) {
+            margin-bottom: 50px;
+        }
 `;
 export const FooterTitle = styled.h2`
     text-transform: uppercase;
@@ -22,4 +31,8 @@ export const FooterTitle = styled.h2`
 
 export const NavContent = styled.div`
     display: flex;
+
+    @media(max-width: 550px) {
+        flex-direction: column;
+    }
 `;

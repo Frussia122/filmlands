@@ -9,6 +9,15 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-around;
     padding-bottom: 80px;
+
+    @media(max-width: 1100px) {
+        flex-direction: column;
+    }
+    @media(max-width: 415px) {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 `;
 
 export const Title = styled.h2`
@@ -16,6 +25,11 @@ export const Title = styled.h2`
     font-family: Nunito;
     font-size: 30px;
     font-weight: 500;
+    
+    @media(max-width: 415px) {
+        font-size: 24px;
+        margin-top: 24px;
+    }
 `;
 
 export const Description = styled.p`
@@ -25,6 +39,12 @@ export const Description = styled.p`
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
+
+    @media(max-width: 415px) {
+        margin: 5px 0 20px 0;
+        font-size: 14px;
+        line-height: 1;
+    }
 `
 
 export const Button = styled.button`
@@ -35,6 +55,11 @@ export const Button = styled.button`
     font-weight: 400;
     line-height: 23px;
     border: none;
+
+    @media(max-width: 415px) {
+        padding: 5px 26px;
+        font-size: 14px;
+    }
 `;
 
 export const Content = styled.div`
@@ -42,10 +67,19 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    
+    @media(max-width: 1100px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 `;
 
 export const Background = styled.img`
-
+    @media(max-width: 415px) {
+        width: 100%;
+    }
 `;
 
 export const Red = styled.p`
