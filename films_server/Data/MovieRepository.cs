@@ -36,8 +36,6 @@ namespace films_server.Data
             movieFromDb.Poster = movie.Poster;
             movieFromDb.Genre = movie.Genre;
             movieFromDb.Trailer = movie.Trailer;
-            
-
         }
 
         public async Task  DeleteMovieAsync(int movieId)

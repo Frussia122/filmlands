@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "RJZOLWkCrC3L4mAe672CbUtNT/zMv/LwmzKJp06cpWs=",
+  "Source": "films_server",
+  "BasePath": "_content/films_server",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

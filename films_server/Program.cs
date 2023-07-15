@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
+
 
 builder.Services.AddDbContext<MovieDb>(options =>
 {
@@ -106,6 +108,10 @@ app.MapGet("/movies/search/title/{query}",
     .ExcludeFromDescription();
 
 app.UseHttpsRedirection();
+app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()); 
 app.Run();
 
 
