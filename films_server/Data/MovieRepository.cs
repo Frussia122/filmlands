@@ -14,6 +14,8 @@ namespace films_server.Data
         }
         public  Task<List<Movie>> GetMoviesAsync() =>  _context.Movies.ToListAsync();
 
+        public Task<List<Movie>> GetMoviesAsync(string title) =>
+            _context.Movies.Where(h => h.Title.Contains(title)).ToListAsync();
 
         public async Task<Movie> GetMovieAsync(int movieId) =>
             await _context.Movies.FindAsync(new object[]{movieId});
