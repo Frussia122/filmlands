@@ -1,9 +1,10 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import categoryReducer from './slices/homeCategorySlice';
+import userCookieReducer from './slices/userCookieSlice';
 
 const rootReducer = combineReducers({
   category: categoryReducer,
-  // Другие срезы состояния
+  userCookie: userCookieReducer,
 });
 
 export const store = configureStore({
