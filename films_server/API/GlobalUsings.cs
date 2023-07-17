@@ -1,0 +1,15 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Mvc;
+global using Newtonsoft.Json;
+global using Newtonsoft.Json.Serialization;
+global using System.ComponentModel.DataAnnotations;
+global using System.IdentityModel.Tokens.Jwt;
+global using System.Security.Claims;
+global using System.Text;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Microsoft.AspNetCore.Authorization;
+global using System.IO;
+global using System.IO.Compression;
+global using System.Text;
+global using Microsoft.IdentityModel.Tokens;
