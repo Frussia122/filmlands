@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-
-export const Info = styled.button`
+import { Link } from 'react-router-dom';
+export const Info = styled(Link)`
     border-radius: 20px;
     background: #053BA3;
     border: none;

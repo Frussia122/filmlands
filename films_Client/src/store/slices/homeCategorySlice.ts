@@ -27,3 +27,4 @@ export const selectActiveIndex = (state: RootState) => state.category.activeInde
 export const selectActiveGenre = (state: RootState) => state.category.activeGenre;
 
 export default homeCategorySlice.reducer;
+

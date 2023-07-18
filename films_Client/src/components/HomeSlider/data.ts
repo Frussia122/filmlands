@@ -15,10 +15,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'Privet poka',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -30,10 +30,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'asdasd',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -45,10 +45,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'agsdasd',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -60,10 +60,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'aaaaaaa',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -75,10 +75,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'bbbbbbbb',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -90,10 +90,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'sssssssss',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -105,10 +105,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'bnbbbbbbbb',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -120,10 +120,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'hassdasd',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -135,10 +135,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'hasdasd',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -150,10 +150,10 @@ export const latestFilms: Latest[] = [
     {   
         type: 'film',
         id: uuidv4(),
-        title: 'Black adam',
+        title: 'hasdasdsadd',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -166,10 +166,10 @@ export const latestFilms: Latest[] = [
         type: 'serial',
         id: uuidv4(),
         seasons: 2,
-        title: 'Black adam',
+        title: 'ahasdasdas',
         date: '2022',
         genre: 'Drama',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -185,7 +185,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Drama',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -201,7 +201,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Drama',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -217,7 +217,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Drama',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -233,7 +233,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Drama',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -249,7 +249,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Drama',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -265,7 +265,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -281,7 +281,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -297,7 +297,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 
@@ -313,7 +313,7 @@ export const latestFilms: Latest[] = [
         title: 'Black adam',
         date: '2022',
         genre: 'Action',
-        img: 'https://caribbeancinemas.com/wp-content/uploads/2022/10/blackadambanner.jpg',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/1003770f-bc50-4ad5-b951-ea2b954a5300/1920x',
         description: `
             5,000 years ago, Black Adam was empowered
             by the Egyptian gods and imprisoned. 

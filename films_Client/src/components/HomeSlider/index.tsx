@@ -58,7 +58,7 @@ const HomePageSlider: React.FC<sliderProps> = ({type, title, data, scroll, show 
                             </Header>
                             <Year>{film.date}</Year>
                             <Footer> 
-                                <MoreInfoButton />
+                                <MoreInfoButton id={film.id}/>
                             </Footer>
                        </Information>
                     </Film>

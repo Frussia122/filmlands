@@ -32,7 +32,7 @@ const LatestMovies: React.FC = () => {
                   <Description>{item.description}</Description>
                 </Content>
                 <Actions>
-                  <MoreInfoButton />
+                  <MoreInfoButton id={item.id}/>
                   <AddToFavorites />
                 </Actions>
               </Information>

@@ -1,3 +1,9 @@
+import { 
+  FavoriteUrl,
+  HomeUrl,
+  LatestUrl,
+  PopularUrl,
+} from 'constants/pages/urls';
 
 export type NavItem = {
     title: string;
@@ -7,20 +13,20 @@ export type NavItem = {
   const nav: NavItem[] = [
     {
       title: 'Home',
-      url: '/',
+      url: HomeUrl,
     },
     {
       title: 'Films',
-      url: '/films',
+      url: FavoriteUrl,
     },
     {
       title: 'TV Series',
-      url: '/series',
+      url: LatestUrl,
     }
     ,
     {
       title: 'Kids',
-      url: '/kids',
+      url: PopularUrl,
     },
     {
       title: 'TV',

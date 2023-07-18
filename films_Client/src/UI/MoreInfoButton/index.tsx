@@ -1,9 +1,11 @@
 import { Info } from './styled';
 
-
-const MoreInfoButton: React.FC = () => {
+type MoreINfoButtonProps = {
+    id: string,
+}
+const MoreInfoButton: React.FC<MoreINfoButtonProps> = ({id}) => {
     return (
-        <Info>More info</Info>
+        <Info to={`/collection/${id}`}>More info</Info>
     );
 }
 export default MoreInfoButton;
