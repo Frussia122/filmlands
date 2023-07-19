@@ -31,7 +31,8 @@ app.UseCors(options =>
     options.AllowAnyMethod();
     options.AllowAnyHeader();
 });
-app.Run();
+
+app.Run(); //Запуск приложения
 
 void RegisterServices(IServiceCollection services)
 {
