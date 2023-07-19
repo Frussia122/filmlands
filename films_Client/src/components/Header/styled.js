@@ -6,6 +6,8 @@ export const Wrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1005;
+    position: relative;
 `;
 export const Logo = styled.img`
 

@@ -7,7 +7,7 @@ export const MainWrapper = styled.section`
 export const Wrapper = styled.div`
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-bottom: 80px;
 
     @media(max-width: 1100px) {

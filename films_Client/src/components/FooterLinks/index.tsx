@@ -1,10 +1,9 @@
 import {
     LinksWrapper,
     Links,
-    GoodLinks
 } from './styled';
 
-import {AllLinks, Link} from './AllLinks';
+import {AllLinks} from './AllLinks';
 
 const FooterLinks: React.FC = () => {
     return (
