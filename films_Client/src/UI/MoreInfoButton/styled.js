@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+
 export const Info = styled(Link)`
     border-radius: 20px;
     background: #053BA3;

@@ -1,6 +1,6 @@
 export type Latest = {
     type: string;
-    seasons?: number;
+    seasons?: number | undefined;
     id: string;
     title: string;
     trailer: string;
@@ -13,7 +13,8 @@ export type Latest = {
     genre: string;
     description: string;
     img: string;
-}
+};
+
 
 export const latestFilms: Latest[] = [
     {   
