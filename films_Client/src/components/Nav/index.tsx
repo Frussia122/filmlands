@@ -1,4 +1,4 @@
-import { NavLinks, LinkItem, Link} from './styled';
+import { NavLinks, LinkItem, NavAction} from './styled';
 import nav, { NavItem } from './links';
 import { useState } from 'react';
 import Burger from 'UI/Burger/index'
@@ -11,7 +11,7 @@ const HeaderNav: React.FC = () => {
         <NavLinks className={isBurger ? 'menuActive' : ''}>
             {nav.map((link: NavItem, index:number) => (
                 <LinkItem key={index}>
-                    <Link href={link.url}>{link.title}</Link>
+                    <NavAction to={link.url}>{link.title}</NavAction>
                 </LinkItem>
             ))}
         </NavLinks>

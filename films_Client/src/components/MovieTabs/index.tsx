@@ -11,11 +11,11 @@ import { tabs } from './tabsList';
 
 
 
-
 const MovieTabs = () => {
-  
+
     const [activeTab, setActiveTab] = useState(0);
-  
+
+    
     const handleTabClick = (index: number) => {
       setActiveTab(index);
     };

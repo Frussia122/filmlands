@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import {Link} from 'react-router-dom';
 
 const slideIn = keyframes`
   0% {
@@ -44,7 +45,7 @@ export const LinkItem = styled.li`
   }
 `;
 
-export const Link = styled.a`
+export const NavAction = styled(Link)`
   font-size: 20px;
   color: white;
   text-decoration: none;

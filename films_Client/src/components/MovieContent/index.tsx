@@ -19,10 +19,10 @@ import {
 
 
 type MovieDescriptionProps = {
-    movie?: Latest
+    movie?: Latest;
 }
 
-const MovieDescription:React.FC<MovieDescriptionProps> = ({ movie }) => {
+const MovieContent:React.FC<MovieDescriptionProps> = ({ movie }) => {
   return (
     <Content>
       <Container>
@@ -51,4 +51,4 @@ const MovieDescription:React.FC<MovieDescriptionProps> = ({ movie }) => {
   );
 };
 
-export default MovieDescription;
+export default MovieContent;

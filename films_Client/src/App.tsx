@@ -28,6 +28,8 @@ const LatestLayout = withLayout(Latest);
 const MyListLayout = withLayout(MyList);
 const CollectionLayout = withLayout(Collection);
 const SingleMovieListLayout = withLayout(SingleMovie);
+
+
 function App() {
   const [cookies] = useCookies(['myCookie']);
   

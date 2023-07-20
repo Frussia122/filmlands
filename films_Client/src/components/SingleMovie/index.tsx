@@ -6,31 +6,31 @@ import {
 import { useEffect } from "react";
 import MovieTabs from "components/MovieTabs";
 import MovieVideo from "components/MovieBackground";
-import MovieDescription from "components/MovieContent";
+import MovieContent from "components/MovieContent";
+import { useDispatch, useSelector } from 'react-redux';
+import { setActiveFilm, currentFilm } from 'store/slices/currentFilmSlice';
 
 
-const SingleMovie: React.FC = ( ) => {
-    const { id } = useParams();
-    console.log(id);
-    
-    useEffect(()=> {
-      window.scrollTo(0, 0);
-    }, [])
+const SingleMovie: React.FC = () => {
+  const { id } = useParams();
+  const activeFilm = useSelector(currentFilm);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    const movieToDispatch = latestFilms.find((el) => el.id.toString() === id);
+    if (movieToDispatch) {
+      dispatch(setActiveFilm({ movie: movieToDispatch }));
+    }
+    window.scrollTo(0, 0);
+  }, [id, dispatch]);
 
-    const movie = latestFilms.find(el => el.id === id)
+  return (
+    <Wrapper>
+      <MovieVideo url={activeFilm?.trailer} />
+      <MovieContent movie={activeFilm ? activeFilm : undefined} />
+      <MovieTabs />
+    </Wrapper>
+  );
+};
 
-
-    
-    return (
-        <Wrapper>
-          <MovieVideo url={movie?.trailer} />
-          <MovieDescription movie={movie}/>
-          <MovieTabs />
-
-          {/* <iframe className="asssssss" src="https://player.vimeo.com/video/839457843?h=6907875b93" width="640" height="270" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe> */}
-        </Wrapper>
-      
-    )
-}
 export default SingleMovie;
