@@ -27,9 +27,10 @@ foreach(var api in apis)
 
 app.UseCors(options =>
 {
-    options.AllowAnyOrigin();
+    options.WithOrigins("http://localhost:3000");
     options.AllowAnyMethod();
     options.AllowAnyHeader();
+    options.WithHeaders("Authorization", "Content-Type");
 });
 
 app.Run(); //Запуск приложения
@@ -76,7 +77,6 @@ void RegisterServices(IServiceCollection services)
             });
     services.AddTransient<IApi, AuthApi>();
     services.AddTransient<IApi, MovieApi>();
-
 
 }
 

@@ -4,7 +4,7 @@ namespace films_server.Auth
 {
     public class TokenService : ITokenService
     {
-        private TimeSpan ExpiryDuration = new TimeSpan(0, 30, 0);
+        private TimeSpan ExpiryDuration = new TimeSpan(3, 0, 0);
         public string buildToken(string key, string issuer, UserDto user)
         {
             var claims = new[]
@@ -19,7 +19,7 @@ namespace films_server.Auth
                 SecurityAlgorithms.HmacSha256);
 
             var tokenDescriptor = new JwtSecurityToken(issuer, issuer, claims,
-                expires: DateTime.Now.Add(ExpiryDuration));
+                expires: DateTime.Now.Add(ExpiryDuration), signingCredentials:credentials);
             return new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);
         }
 

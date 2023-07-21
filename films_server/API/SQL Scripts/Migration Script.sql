@@ -30,7 +30,7 @@ INSERT Token (TokenInfo,LifeTime,QueriesCount,UserId) VALUES
 GO
 
 --create movies part
-create table Movie
+create table Movies
 (
 Id INT not null primary key Identity,
 Title nvarchar(max) not null,
@@ -44,12 +44,12 @@ AgeLimit nvarchar(max) not null
 );
 go
 
-INSERT Movie (Title, ReleaseDate, Duration, Trailer,Raiting,Director,Country,AgeLimit) VALUES
+INSERT Movies (Title, ReleaseDate, Duration, Trailer,Raiting,Director,Country,AgeLimit) VALUES
 ('Ярость','15 октября 2014','134мин','data:video/webm;base64,GkXfowEAAAAAAAAfQoaBAUL3gQFC8oEEQvOBCEKChHdlYm1Ch4EEQoWBAhhTgGcBAAAAAAAByhFNm3RAHU27i1OrhBVJqWZTrIHlTbuMU6uEFlSua1OsggEj7AEAAAAAAAC5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVSalmAQAAAAAAADIq17GDD0JATYCNTGF2ZjU3Ljc2LjEwMFdBjUxhdmY1Ny43Ni4xMDBEiYhASwAAAAAAABZUrmsBAAAAAAAAYq4BAAAAAAAAWdeBAXPFgQGcgQAitZyDdW5khoZBX09QVVNWqoNjLqBWu4QExLQAg4EC4QEAAAAAAAARn4ECtYhA53AAAAAAAGJkgSBjopNPcHVzSGVhZAECOAGAuwAAAAAAH0O2dQEAAAAAAAAt54EAo4eBAACA/P/+o4eBABWA/P/+oAEAAAAAAAAPoYeBACkA/P/+daKDa3KD',
 'IMDb: 7.60516 786','Дэвид Эйр','США','18+')
 GO
 
-create table Actor
+create table Actors
 (
 Id INT not null primary key Identity,
 [Name] nvarchar(max) not null,
@@ -58,11 +58,11 @@ Id INT not null primary key Identity,
 BirthDate nvarchar(max) not null,
 BirthPlace nvarchar(max) not null,
 [Description] nvarchar(max) not null,
-MovieId int foreign key references Movie(Id) on delete cascade not null
+MovieId int foreign key references Movies(Id) on delete cascade not null
 );
 go
 
-INSERT Actor ([Name],[Surname],[Picture],BirthDate,BirthPlace,[Description],MovieId) VALUES
+INSERT Actors ([Name],[Surname],[Picture],BirthDate,BirthPlace,[Description],MovieId) VALUES
 ('Брэд','Питт','https://www.kinopoisk.ru/name/25584/photos/',
 '18 декабря, 1963','Шоуни, Оклахома, США','О персоне Карьера: Актер, Продюсер',1),
 ('Шайа ','ЛаБаф','https://www.kinopoisk.ru/name/30162/photos/',
@@ -75,7 +75,7 @@ GO
  Id INT not null identity ,
  SmallPoster nvarchar(max) not null,
  BigPoster nvarchar(max) not null,
- MovieId int primary key foreign key references Movie(Id)on delete cascade not null
+ MovieId int primary key foreign key references Movies(Id)on delete cascade not null
  );
  go
 
@@ -89,7 +89,7 @@ GO
  (
  Id int not null identity,
  [Description] nvarchar(max) not null,  
- MovieId int not null primary key foreign key references Movie(Id)on delete cascade
+ MovieId int not null primary key foreign key references Movies(Id)on delete cascade
  );
  go
 
@@ -102,7 +102,7 @@ go
  Id int not null identity,
  SmallDescription nvarchar(max) not null,
  BigDescription nvarchar(max) not null,  
- MovieId int not null primary key foreign key references Movie(Id)on delete cascade
+ MovieId int not null primary key foreign key references Movies(Id)on delete cascade
  );
  go
 

@@ -1,6 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
-
-
+using films_server.Data.MovieModel;
 using Newtonsoft.Json;
 
 namespace films_server.Data
@@ -12,7 +11,26 @@ namespace films_server.Data
         {
             _context = context;
         }
-        public  Task<List<Movie>> GetMoviesAsync() =>  _context.Movies.ToListAsync();
+        public async Task<List<Movie>> GetMoviesAsync()
+        {
+            var allMovies = await _context.Movies.ToListAsync();
+
+            HashSet<Movie> uniqueMovies = new HashSet<Movie>();
+
+            // Фильтруем повторяющиеся фильмы и добавляем их в HashSet
+            foreach (Movie movie in allMovies)
+            {
+                uniqueMovies.Add(movie);
+            }
+
+            // Возвращаем список уникальных фильмов
+            var temp = uniqueMovies.ToList();
+
+            var allActors = await _context.Actors.ToListAsync();
+
+            Actor.AddActorsToMovies(temp, allActors);
+            return temp;
+        }
 
         public Task<List<Movie>> GetMoviesAsync(string title) =>
             _context.Movies.Where(h => h.Title.Contains(title)).ToListAsync();
@@ -21,7 +39,7 @@ namespace films_server.Data
             await _context.Movies.FindAsync(new object[]{movieId});
         
 
-        public async Task InsertMovieAsync(Movie movie) => await _context.Movies.AddAsync(movie);
+     
         
 
         public async Task UpdateMovieAsync(Movie movie)
@@ -29,13 +47,7 @@ namespace films_server.Data
             if (movie.Id == null) return; 
             var movieFromDb = await _context.Movies.FindAsync(new object[]{movie.Id});
             if (movieFromDb == null) return;
-            movieFromDb.Title = movie.Title;
-            movieFromDb.Description = movie.Description;
-            movieFromDb.ReleaseDate = movie.ReleaseDate;
-            movieFromDb.Duration = movie.Duration;
-            movieFromDb.Poster = movie.Poster;
-            movieFromDb.Genre = movie.Genre;
-            movieFromDb.Trailer = movie.Trailer;
+
         }
 
         public async Task  DeleteMovieAsync(int movieId)
