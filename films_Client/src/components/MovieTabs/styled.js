@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MovieInformation = styled.div`
-  margin-top: -80px;
+  
 `
 
 export const MovieMenu = styled.ul`

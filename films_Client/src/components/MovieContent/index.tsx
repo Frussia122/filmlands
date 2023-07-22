@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Container } from 'assets/Container/styled';
 import { 
     Content,
@@ -23,6 +24,7 @@ type MovieDescriptionProps = {
 }
 
 const MovieContent:React.FC<MovieDescriptionProps> = ({ movie }) => {
+
   return (
     <Content>
       <Container>
@@ -47,6 +49,8 @@ const MovieContent:React.FC<MovieDescriptionProps> = ({ movie }) => {
           <Watch>Watch Movies</Watch>
         </Controls>
       </Container>
+
+
     </Content>
   );
 };

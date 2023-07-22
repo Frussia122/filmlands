@@ -33,18 +33,20 @@ const SingleMovieListLayout = withLayout(SingleMovie);
 function App() {
   const [cookies] = useCookies(['myCookie']);
   
+  // useEffect(() => {
+  //   axios.get('http://bebracoderr-001-site1.ctempurl.com/movies?api-key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSm9objMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjRmOTdmNDNlLTY1OGEtNDVhZS1hMjFjLTBmZWYxYTM5ZWEyZiIsImV4cCI6MTY4OTk3MzAwMSwiaXNzIjoiUGxhdGludW0iLCJhdWQiOiJQbGF0aW51bSJ9.2gFeFXhO0FQ_TzRXzCemJPB1wiUZHr9_cu_DOa4tFRw', {
+
+  //   })
+  // .then(response => {
+  //   console.log(response.data);
+  // })
+  // .catch(error => {
+  //   console.error(error);
+  // });
+  // }, [])
+
   useEffect(() => {
-    axios.get('http://bebracoderr-001-site1.ctempurl.com/api-key?asojdnajsmdnamsdn/movies', {
-      headers: {
-        'Authorization': 'Bearer eyJhbGciOiJBMTI4Q0JDLUhTMjU2IiwidHlwIjoiSldUIn0.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmFuY3kiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImUzMjRhZTQ3LWE5OGMtNDYwNy05NTRkLWIzMThlZWUzZDdiNCIsImV4cCI6MTY4OTYxOTgyMiwiaXNzIjoiUGxhdGludW0iLCJhdWQiOiJQbGF0aW51bSJ9.mArHZNzk4PbtwBy_3KLq4-hMH7NAnX4hwcdB-oRPK8g'
-      },
-    })
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+    
   }, [])
   return (
     <>

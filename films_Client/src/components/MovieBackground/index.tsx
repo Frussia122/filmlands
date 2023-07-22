@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import {Video} from './styled';
+import {Video, VideoWrapper} from './styled';
 
 type MovieVideoProps = {
     url?: string;
@@ -8,16 +8,24 @@ type MovieVideoProps = {
 
 const MovieVideo:React.FC<MovieVideoProps> = ({ url }) => {
   return (
-    <Video>
+    <VideoWrapper>
+      <Video>
         <ReactPlayer
-            url={url}
-            playing
-            loop
-            muted
-            width="100%"
-            height="100%"
+          url={url}
+          playing
+          loop
+          muted
+          width="100%"
+          height="100%"
+          style={{ 
+            position: 'absolute', 
+            top: '0', 
+            left: '0',
+            zIndex: '-1',
+          }}
         />
-    </Video>
+      </Video>
+  </VideoWrapper>
   );
 };
 

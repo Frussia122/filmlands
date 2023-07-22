@@ -4,20 +4,11 @@ export const Content = styled.div`
   position: absolute;
   width: 100%;
   height: 75vh;
-  top: 97px;
+  top: 120px;
   left: 0;
   padding-top: 60px;
   z-index: 1000;
-  &::after{
-    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 80vh;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
+
 `;
 
 export const Title = styled.h2`
