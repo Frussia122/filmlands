@@ -41,7 +41,7 @@ const HomePageSlider: React.FC<sliderProps> = ({type, title, data, scroll, show 
     }, [privet])
 
     const filteredData = data.filter((item: Latest) => {
-        return type === 'film' ? item.type = 'film': item.type = 'serial';
+      return item.type === type; 
     })
 
     return (

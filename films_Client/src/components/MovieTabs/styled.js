@@ -1,10 +1,14 @@
 import styled from 'styled-components';
-
+import {Wrapper} from 'components/HomeSlider/styled'
 export const MovieInformation = styled.div`
   
 `
 
+
 export const MovieMenu = styled.ul`
+margin-top: -110px;
+position: relative;
+z-index: 1000;
   display: flex;
   list-style:none;
   padding:0;
@@ -33,5 +37,9 @@ export const MovieAction = styled.li`
    
 `
 export const TabContent = styled.div`
-
+z-index: 1002;
+position: relative;
+  ${Wrapper} {
+    margin-top: 0;
+  }
 `
