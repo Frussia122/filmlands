@@ -6,5 +6,6 @@
         public string SmallPoster { get; set; }
         public string BigPoster { get; set; }
         public int MovieId { get; set; }
+        
     }
 }

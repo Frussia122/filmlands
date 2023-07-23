@@ -6,5 +6,7 @@
         public string SmallDescription { get; set; }
         public string BigDescription { get; set; }
         public int MovieId { get; set; }
+
+        
     }
 }

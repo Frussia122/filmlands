@@ -28,14 +28,6 @@ namespace films_server.Apis
                 .WithName("DeleteMovie")
                 .WithTags("Deleters");
 
-            app.MapGet("/movies/search/title/{query}",SearchByName)
-                .Produces<List<Movie>>(StatusCodes.Status200OK)
-                .Produces(StatusCodes.Status404NotFound)
-                .WithName("SearchMovie")
-                .WithTags("Getters")
-                .ExcludeFromDescription();
-
-
         }
 
         [Authorize]
@@ -66,13 +58,5 @@ namespace films_server.Apis
                 await repository.SaveAsync();
                 return Results.NoContent();
         }
-
-        [Authorize]
-        private async Task<IResult> SearchByName(string query, IMovieRepository repository) =>
-                await repository.GetMoviesAsync(query) is
-                    IEnumerable<Movie> movies
-            ? Results.Ok(movies)
-            : Results.NotFound(Array.Empty<Movie>());
-
 }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using films_server.Data.MovieModel;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace films_server.Data
 {
@@ -13,7 +13,12 @@ namespace films_server.Data
         }
         public async Task<List<Movie>> GetMoviesAsync()
         {
-            var allMovies = await _context.Movies.ToListAsync();
+            var allMovies = await _context.Movies
+                .Include(m=>m.Poster)
+                .Include(m=>m.Descriptions)
+                .Include(m => m.MovieGenre)
+                .Include(m=>m.Actors)
+                .ToListAsync();
 
             HashSet<Movie> uniqueMovies = new HashSet<Movie>();
 
@@ -25,22 +30,24 @@ namespace films_server.Data
 
             // Возвращаем список уникальных фильмов
             var temp = uniqueMovies.ToList();
-
-            var allActors = await _context.Actors.ToListAsync();
-
-            Actor.AddActorsToMovies(temp, allActors);
             return temp;
         }
 
-        public Task<List<Movie>> GetMoviesAsync(string title) =>
-            _context.Movies.Where(h => h.Title.Contains(title)).ToListAsync();
+        public async Task<Movie> GetMovieAsync(int movieId)
+        {
+            var movie = await _context.Movies
+                .Include(m => m.Poster)
+                .Include(m => m.Descriptions)
+                .Include(m => m.MovieGenre)
+                .Include(m => m.Actors)
+                .FirstOrDefaultAsync(m => m.Id == movieId);
 
-        public async Task<Movie> GetMovieAsync(int movieId) =>
-            await _context.Movies.FindAsync(new object[]{movieId});
-        
+            return movie;
+        }
 
-     
-        
+
+
+
 
         public async Task UpdateMovieAsync(Movie movie)
         {

@@ -4,8 +4,6 @@
     {
         Task<List<Movie>> GetMoviesAsync();
     
-
-        Task<List<Movie>> GetMoviesAsync(string title);
         Task<Movie> GetMovieAsync(int movieId);
 
         Task UpdateMovieAsync(Movie movie);
