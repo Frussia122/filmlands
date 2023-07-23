@@ -56,7 +56,7 @@ class UserService {
                 throw ApiError.UnauthorizedError();
             }
             const userData = await tokenService.validateRefreshToken(refreshToken);
-            const tokenFromDB = await tokenService.findTokenFromDB(refreshToken);
+            const tokenFromDB = await tokenService.findToken(refreshToken);
             if(!userData || !tokenFromDB){
                 throw ApiError.UnauthorizedError();
             }
@@ -64,7 +64,7 @@ class UserService {
             const userDto = new UserDto(user);
             const tokens = tokenService.generateTokens({...userDto})
             await tokenService.saveToken(userDto.id , tokens.refreshToken)
-            return{...tokens, user:userDto}
+            return{...tokens, user: userDto}
         }
 
         async getAllUsers(){
