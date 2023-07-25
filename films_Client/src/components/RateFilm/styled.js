@@ -44,8 +44,8 @@ export const Star = styled.li`
   border-radius: 50%;
   background-color: white;
   color: black;
-  font-size: 20px; /* Добавляем размер текста */
-
+  font-size: 20px; 
+  
   &::before,
   &::after {
     content: '';

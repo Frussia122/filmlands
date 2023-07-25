@@ -3,12 +3,12 @@ import Popular from 'pages/Popular';
 import Latest from 'pages/Latest/index';
 import MyList from 'pages/MyList/index';
 import Collection from 'pages/Collection';
-import withLayout  from 'Hoc/RouteWithLayout';
 import SignIn from 'pages/SignIn';
 import SignUp from 'pages/SignUp';
 import { useCookies } from 'react-cookie';
-import axios from 'axios';
+import Profile from 'pages/Profile/index';
 import { Routes, Route } from 'react-router-dom';
+
 import { 
   FavoriteUrl,
   HomeUrl,
@@ -16,18 +16,13 @@ import {
   PopularUrl,
   SignInUrl,
   SignUpUrl,
-  CollectionUrl
+  CollectionUrl,
+  ProfileUrl
 } from 'constants/pages/urls';
-import { useEffect } from 'react';
 import SingleMovie from 'components/SingleMovie';
+import MainLayout from 'components/MainLayout/index';
+import ProfileLayout from 'components/ProfileLayout';
 
-
-const HomePageLayout = withLayout(HomePage);
-const PopularLayout = withLayout(Popular);
-const LatestLayout = withLayout(Latest);
-const MyListLayout = withLayout(MyList);
-const CollectionLayout = withLayout(Collection);
-const SingleMovieListLayout = withLayout(SingleMovie);
 
 
 function App() {
@@ -45,20 +40,23 @@ function App() {
   // });
   // }, [])
 
-  useEffect(() => {
-    
-  }, [])
   return (
     <>
     <Routes>
-      <Route path={HomeUrl} element={<HomePageLayout />} />
-      <Route path={PopularUrl} element={<PopularLayout />}/>
-      <Route path={LatestUrl} element={<LatestLayout />}/>
-      <Route path={FavoriteUrl} element={<MyListLayout />}/>
-      <Route path={CollectionUrl} element={<CollectionLayout />} />
-      <Route path={`${CollectionUrl}/:id`} element={<SingleMovieListLayout />} />
+      <Route path={HomeUrl} element={<MainLayout />}>  
+        <Route index element={<HomePage />}/>
+        <Route path={LatestUrl} element={<Latest />}/>
+        <Route path={FavoriteUrl} element={<MyList />}/>
+        <Route path={CollectionUrl} element={<Collection />} />
+        <Route path={`${CollectionUrl}/:id`} element={<SingleMovie />} />
+      </Route>
+      <Route path={ProfileUrl} element={<ProfileLayout />} >
+        <Route index element={<Profile />} />
+      </Route>
       <Route path={SignInUrl} element={<SignIn/>}/>
       <Route path={SignUpUrl} element={<SignUp/>}/>
+      <Route path={ProfileUrl} element={<Profile />} />
+
     </Routes>
     </>
   );

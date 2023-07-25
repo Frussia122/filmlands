@@ -5,10 +5,12 @@ import styled from 'styled-components';
 export const VideoWrapper = styled.div`
 margin-top: -120px;
   position: relative;
-  padding-top: 56.25%; /* 16:9 aspect ratio, adjust this as needed */
+  padding-top: 56.25%; 
   z-index: 5;
+
+
   @media (max-width: 768px) {
-    padding-top: 75%; /* 4:3 aspect ratio for smaller screens */
+    padding-top: 75%;
   }
 `;
 

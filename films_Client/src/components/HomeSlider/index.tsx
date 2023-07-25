@@ -33,15 +33,15 @@ const HomePageSlider: React.FC<sliderProps> = ({type, title, data, scroll, show 
 
 
     const [isLoading, setIsloading] = useState(true);
-    const [privet, setPrivet] = useState(true);
+
     useEffect(() => {
-        if(privet) {
             setIsloading(false);
-        }
-    }, [privet])
+    }, [])
 
     const filteredData = data.filter((item: Latest) => {
-      return item.type === type; 
+      if(item.type === 'film') {
+        return item
+      } return item.type === 'serial'
     })
 
     return (

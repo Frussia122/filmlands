@@ -34,7 +34,7 @@ export const login = createAsyncThunk<IUser, { email: string, password: string }
     "auth/logout",
     async () => {
         try {
-            const response = await AuthService.logout();
+            await AuthService.logout();
             localStorage.removeItem('token');
           } catch (error: any) {
             return error.response?.data?.message;
@@ -54,7 +54,7 @@ const initialState: CurrentUser = {
 }
 
 const authSlice = createSlice({
-    name: 'authorisation',
+    name: 'authorization',
     initialState,
     reducers: {
     },
@@ -64,7 +64,7 @@ const authSlice = createSlice({
             state.user = action.payload;
         })
         builder.addCase(login.rejected, (state,action) => {
-           console.error('ошибка', action.error)
+           console.error('Error', action.error)
         })
 
         builder.addCase(registration.fulfilled, (state,action) => {
@@ -72,14 +72,14 @@ const authSlice = createSlice({
             state.user = action.payload;
         })
         builder.addCase(registration.rejected, (state,action) => {
-           console.error('ошибка', action.error)
+           console.error('Error', action.error)
         })
         builder.addCase(logout.fulfilled, (state,action) => {
             state.isAuth = false;
             state.user = {} as IUser;
         })
         builder.addCase(logout.rejected, (state,action) => {
-           console.error('ошибка', action.error)
+           console.error('Error', action.error)
         })
     }
 })
