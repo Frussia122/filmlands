@@ -1,5 +1,6 @@
 ﻿using films_server.Auth;
 using films_server.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace films_server.Apis
 {
@@ -34,10 +35,13 @@ namespace films_server.Apis
         }
 
         [Authorize]
-        private async Task<IResult> Get(IMovieRepository repository) =>
-                 Results.Ok(await repository.GetMoviesAsync());
-
+        private async Task<IResult> Get(IMovieRepository repository, IHttpContextAccessor httpContextAccessor)
+        {
+            var httpContext = httpContextAccessor.HttpContext;
+            return Results.Ok(await repository.GetMoviesAsync(httpContext));
+        }
         [Authorize]
+
         private  async Task<IResult> GetById(int id, IMovieRepository repository) =>
              await repository.GetMovieAsync(id)
              is Movie movie

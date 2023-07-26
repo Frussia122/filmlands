@@ -2,7 +2,7 @@
 {
     public interface IMovieRepository : IDisposable
     {
-        Task<List<Movie>> GetMoviesAsync();
+        Task<List<Movie>> GetMoviesAsync(HttpContext httpContext);
     
         Task<Movie> GetMovieAsync(int movieId);
         Task InsertMovieAsync(Movie movie);

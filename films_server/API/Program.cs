@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 RegisterServices(builder.Services);
 builder.Services.AddCors();
-List<Series> Series = new List<Series>();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

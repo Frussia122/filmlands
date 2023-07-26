@@ -1,6 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
 using films_server.Data.MovieModel;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Mvc;
+using Azure.Core;
 
 namespace films_server.Data
 {
@@ -11,8 +13,14 @@ namespace films_server.Data
         {
             _context = context;
         }
-        public async Task<List<Movie>> GetMoviesAsync()
+
+        public async Task<List<Movie>> GetMoviesAsync(HttpContext httpContext)
         {
+            if(httpContext == null) return new List<Movie>();
+
+            int? count = httpContext.Request.Query.TryGetValue("count", out var values) ?
+                     int.Parse(values.ToString()) :10;
+
             var allMovies = await _context.Movies
                 .Include(m=>m.Poster)
                 .Include(m=>m.Descriptions)
@@ -27,9 +35,8 @@ namespace films_server.Data
             {
                 uniqueMovies.Add(movie);
             }
-
             // Возвращаем список уникальных фильмов
-            var temp = uniqueMovies.ToList();
+            var temp = uniqueMovies.Take(count.Value).ToList(); ;
             return temp;
         }
 
