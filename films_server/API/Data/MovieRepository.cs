@@ -44,10 +44,10 @@ namespace films_server.Data
 
             return movie;
         }
-
-
-
-
+        public async Task InsertMovieAsync(Movie movie) 
+        {
+            await _context.Movies.AddAsync(movie);
+        }
 
         public async Task UpdateMovieAsync(Movie movie)
         {
@@ -83,6 +83,5 @@ namespace films_server.Data
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-        
     }
 }

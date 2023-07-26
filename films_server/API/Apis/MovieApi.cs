@@ -16,8 +16,11 @@ namespace films_server.Apis
                 .Produces<Movie>(StatusCodes.Status200OK)
                 .WithName("GetMovie")
                 .WithTags("Getters");
-
-  
+            app.MapPost("/movies",Post)
+                .Accepts<Movie>("application/json")
+                .Produces<Movie>(StatusCodes.Status201Created)
+                .WithName("CreateMovie")
+                .WithTags("Creators");
 
             app.MapPut("/movies",Put)
                 .Accepts<Movie>("application/json")
@@ -41,7 +44,13 @@ namespace films_server.Apis
              ? Results.Ok(movie)
              : Results.NotFound();
 
-    
+        [Authorize]
+        private async Task<IResult> Post([FromBody] Movie movie, IMovieRepository repository)
+        {
+            await repository.InsertMovieAsync(movie);
+            await repository.SaveAsync();
+            return Results.Created($"/movies/{movie.Id}", movie);
+        }
 
         [Authorize]
         private async Task<IResult>Put([FromBody] Movie movie, [FromServices] IMovieRepository repository) 

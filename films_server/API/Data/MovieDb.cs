@@ -9,6 +9,15 @@ public class MovieDb : DbContext
     public DbSet<MovieGenre> MovieGenre => Set<MovieGenre>();
     public DbSet<Description> Description => Set<Description>();
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Movie>()
+            .Property(m => m.Id)
+            .ValueGeneratedOnAdd();
+        // Repeat the above for other entities with identity columns, if needed.
+    }
+
+
 }
 
 

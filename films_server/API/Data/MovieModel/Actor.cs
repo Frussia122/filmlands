@@ -4,6 +4,8 @@ namespace films_server.Data.MovieModel
 {
     public class Actor
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -13,7 +15,6 @@ namespace films_server.Data.MovieModel
         public string Description { get; set; }
         public int MovieId { get; set; }
 
-        
 
     }
 }
