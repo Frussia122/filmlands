@@ -22,6 +22,7 @@ import {
 import SingleMovie from 'components/SingleMovie';
 import MainLayout from 'components/MainLayout/index';
 import ProfileLayout from 'components/ProfileLayout';
+import ProfileSubscription from 'components/ProfileSubscription';
 
 
 
@@ -52,6 +53,7 @@ function App() {
       </Route>
       <Route path={ProfileUrl} element={<ProfileLayout />} >
         <Route index element={<Profile />} />
+        <Route path={`${ProfileUrl}/subscription`} element={<ProfileSubscription />} />
       </Route>
       <Route path={SignInUrl} element={<SignIn/>}/>
       <Route path={SignUpUrl} element={<SignUp/>}/>
