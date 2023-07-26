@@ -79,7 +79,12 @@ namespace films_server.Data
 
         public async Task  DeleteMovieAsync(int movieId)
         {
-            var movieFromDb = await _context.Movies.FindAsync(new object[] { movieId });
+            var movieFromDb = await _context.Movies
+                .Include(m => m.Poster)
+                .Include(m => m.Descriptions)
+                .Include(m => m.MovieGenre)
+                .Include(m => m.Actors)
+                .FirstOrDefaultAsync(m => m.Id == movieId);
             if (movieFromDb == null) return;
             _context.Movies.Remove(movieFromDb);
         }
