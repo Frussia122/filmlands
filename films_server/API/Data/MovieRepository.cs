@@ -51,10 +51,30 @@ namespace films_server.Data
 
         public async Task UpdateMovieAsync(Movie movie)
         {
-            if (movie.Id == null) return; 
-            var movieFromDb = await _context.Movies.FindAsync(new object[]{movie.Id});
+            if (movie.Id == null) return;
+            
+            var movieFromDb = await _context.Movies
+                .Include(m => m.Poster)
+                .Include(m => m.Descriptions)
+                .Include(m => m.MovieGenre)
+                .Include(m => m.Actors)
+                .FirstOrDefaultAsync(m => m.Id == movie.Id);
+
             if (movieFromDb == null) return;
 
+            movieFromDb.Title = movie.Title;
+            movieFromDb.ReleaseDate = movie.ReleaseDate;
+            movieFromDb.Duration = movie.Duration;
+            movieFromDb.ReleaseDate = movie.ReleaseDate;
+            movieFromDb.Trailer = movie.Trailer;
+            movieFromDb.Raiting = movie.Raiting;
+            movieFromDb.Director = movie.Director;
+            movieFromDb.Country = movie.Country;
+            movieFromDb.AgeLimit = movie.AgeLimit;
+            movieFromDb.Poster = movie.Poster;
+            movieFromDb.Actors = movie.Actors;
+            movieFromDb.MovieGenre = movie.MovieGenre;
+            movieFromDb.Descriptions = movie.Descriptions;
         }
 
         public async Task  DeleteMovieAsync(int movieId)
