@@ -116,8 +116,8 @@ create table Series
  (
 Id INT not null primary key Identity,
 Title nvarchar(max) not null,
-[Description] nvarchar(max) not null,
 ReleaseDate nvarchar(max) not null,
+[Description] nvarchar(max) not null,
 Duration nvarchar(max) not null,
 Trailer nvarchar(max) not null,
 Raiting nvarchar(max) not null,
@@ -126,6 +126,10 @@ Country nvarchar(max) not null,
 AgeLimit nvarchar(max) not null
 );
 go
+
+INSERT Series (Title, ReleaseDate,[Description], Duration, Trailer,Raiting,Director,Country,AgeLimit) VALUES
+('Witcher','20 december 2019','description','3 seasons','trailer url','8.1 imdb','Lauren Schmidt Hissrich','USA','18+')
+GO
 
 create table Season
 (
@@ -142,6 +146,11 @@ SeriesId int foreign key references Series(Id)on delete cascade not null,
 );
 go
 
+INSERT Season (Title,[Description], ReleaseDate, Trailer,Raiting,Director,Country,AgeLimit,SeriesId) VALUES
+('Witcher','description','20dec 2019','trailer url','8.1 imdb','Lauren Schmidt Hissrich','USA','18+',1)
+GO
+
+
 
 create table SeriesActor
 (
@@ -154,23 +163,40 @@ BirthPlace nvarchar(max) not null,
 [Description] nvarchar(max) not null,
 SeriesId int foreign key references Series(Id) on delete cascade not null
 );
-go
+
+INSERT SeriesActor ([Name],[Surname],[Picture],BirthDate,BirthPlace,[Description],SeriesId) VALUES
+('Henry','Cavill','https://media.allure.com/photos/649ca84564be53f2d2c8e9dc/4:3/w_2018,h_1513,c_limit/henry%20cavill%20salt-and-pepper%20era.jpg',
+'18 декабря, 1963','Шоуни, Оклахома, США','О персоне Карьера: Актер, Продюсер',1),
+('Freya ','Allan','https://stuki-druki.com/biofoto4/freya-allan-01.jpg',
+'11 июня, 1986 ',
+'Лос-Анджелес, Калифорния, США','О персоне Карьера Актер, Режиссер, Сценарист, Продюсер',1)
+GO
+
  create table SeriesPoster
  (
- Id INT not null primary key foreign key references Series(Id)on delete cascade,
+ Id INT not null identity ,
  SmallPoster nvarchar(max) not null,
  BigPoster nvarchar(max) not null,
- SeriesId int not null
+ SeriesId int not null primary key foreign key references Series(Id)on delete cascade
  );
+ go
+
+ insert SeriesPoster (SmallPoster,BigPoster,SeriesId) values
+ ('https://m.media-amazon.com/images/I/81PpyMIHysL._AC_UF1000,1000_QL80_.jpg','bigposter url',1)
  go
 
  create table SeriesGenre
  (
- Id int not null primary key foreign key references Series(Id)on delete cascade,
+ Id int not null identity ,
  [Description] nvarchar(max) not null,  
- SeriesId int not null
+ SeriesId int not null  primary key foreign key references Series(Id)on delete cascade
  );
  go
+
+ insert SeriesGenre([Description],SeriesId)values
+ ('Action Adventure Drama Fantasy',1)
+ go
+
 create table Episode
 (
 Id INT not null primary key Identity,
@@ -182,12 +208,21 @@ SeasonId int foreign key references Season(Id) on delete cascade not null
 );
 go
 
+insert Episode(Title,[Description],Duration,Preview,SeasonId) values
+('ep1','episode 1 desc','ep1 duration','preview ep1 url',1),
+('ep2','episode 2 desc','ep2 duration','preview ep2 url',1)
+go
+
 create table SeasonPoster
  (
- Id INT not null primary key foreign key references Season(Id)on delete cascade,
+ Id INT not null  identity,
  SmallPoster nvarchar(max) not null,
  BigPoster nvarchar(max) not null,
- SeasonId int not null
+ SeasonId int not null primary key foreign key references Season(Id)on delete cascade
  );
+
+ insert SeasonPoster(SmallPoster,BigPoster,SeasonId) values
+ ('smallposterurl','bigposterurl',1)
  go
+
 
