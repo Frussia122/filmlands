@@ -41,7 +41,6 @@ namespace films_server.Apis
             return Results.Ok(await repository.GetMoviesAsync(httpContext));
         }
         [Authorize]
-
         private  async Task<IResult> GetById(int id, IMovieRepository repository) =>
              await repository.GetMovieAsync(id)
              is Movie movie

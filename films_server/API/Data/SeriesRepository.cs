@@ -39,9 +39,19 @@ namespace films_server.Data
             var temp = uniqueSeries.Take(count.Value).ToList(); ;
             return temp;
         }
-        public Task<Series> GetSeriesByIdAsync(int seriesId)
+        public async Task<Series> GetSeriesByIdAsync(int seriesId)
         {
-            throw new NotImplementedException();
+            var series = await _context.Series
+                .Include(m => m.SeriesActors)
+                .Include(m => m.SeriesGenres)
+                .Include(m => m.SeriesPosters)
+                .Include(m => m.Seasons)
+                    .ThenInclude(season => season.Episodes)
+                .Include(m => m.Seasons)
+                    .ThenInclude(season => season.SeasonPosters)
+                .FirstOrDefaultAsync(m=> m.Id == seriesId);
+
+            return series;
         }
         public Task InsertSeriesAsync(Series series)
         {

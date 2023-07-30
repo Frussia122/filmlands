@@ -12,6 +12,10 @@ namespace films_server.Apis
                 .Produces<List<Series>>(StatusCodes.Status200OK)
                 .WithName("GetAllSeries")
                 .WithTags("Getters");
+            app.MapGet("/series/{id}", GetById)
+                .Produces<Series>(StatusCodes.Status200OK)
+                .WithName("GetSeries")
+                .WithTags("Getters");
         }
 
         [Authorize]
@@ -20,5 +24,11 @@ namespace films_server.Apis
             var httpContext = httpContextAccessor.HttpContext;
             return Results.Ok(await repository.GetSeriesAsync(httpContext));
         }
+        [Authorize]
+        private async Task<IResult> GetById(int id, ISeriesRepository repository) =>
+             await repository.GetSeriesByIdAsync(id)
+             is Series serie
+             ? Results.Ok(serie)
+             : Results.NotFound();
     }
 }
