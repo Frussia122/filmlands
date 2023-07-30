@@ -53,25 +53,71 @@ namespace films_server.Data
 
             return series;
         }
-        public Task InsertSeriesAsync(Series series)
+        public async Task InsertSeriesAsync(Series series)
         {
-            throw new NotImplementedException();
+            await _context.Series.AddAsync(series);
         }
-        public Task UpdateSeriesAsync(Series series)
+        public async Task UpdateSeriesAsync(Series series)
         {
-            throw new NotImplementedException();
+            if (series.Id == null) return;
+
+            var seriesFromDb = await _context.Series
+                .Include(m => m.SeriesActors)
+                .Include(m => m.SeriesGenres)
+                .Include(m => m.SeriesPosters)
+                .Include(m => m.Seasons)
+                    .ThenInclude(season => season.Episodes)
+                .Include(m => m.Seasons)
+                    .ThenInclude(season => season.SeasonPosters)
+                .FirstOrDefaultAsync(m => m.Id == series.Id);
+
+            if (seriesFromDb == null) return;
+
+            seriesFromDb.Title = series.Title;
+            seriesFromDb.ReleaseDate = series.ReleaseDate;
+            seriesFromDb.Duration = series.Duration;
+            seriesFromDb.ReleaseDate = series.ReleaseDate;
+            seriesFromDb.Trailer = series.Trailer;
+            seriesFromDb.Raiting = series.Raiting;
+            seriesFromDb.Director = series.Director;
+            seriesFromDb.Country = series.Country;
+            seriesFromDb.AgeLimit = series.AgeLimit;
+            seriesFromDb.SeriesPosters = series.SeriesPosters;
+            seriesFromDb.SeriesActors = series.SeriesActors;
+            seriesFromDb.SeriesGenres = series.SeriesGenres;
+            seriesFromDb.Seasons = series.Seasons;
         }
-        public Task DeleteSeriesAsync(int seriesId)
+        public async Task DeleteSeriesAsync(int seriesId)
         {
-            throw new NotImplementedException();
+            var seriesFromDb = await _context.Series
+                .Include(m => m.SeriesActors)
+                .Include(m => m.SeriesGenres)
+                .Include(m => m.SeriesPosters)
+                .Include(m => m.Seasons)
+                    .ThenInclude(season => season.Episodes)
+                .Include(m => m.Seasons)
+                    .ThenInclude(season => season.SeasonPosters)
+                .FirstOrDefaultAsync(m => m.Id == seriesId);
+            if (seriesFromDb == null) return;
+            _context.Series.Remove(seriesFromDb);
         }
-        public Task SaveAsync()
+        public async Task SaveAsync() => await _context.SaveChangesAsync();
+        private bool _disposed = false;
+        protected virtual void Dispose(bool disposing)
         {
-            throw new NotImplementedException();
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            _disposed = true;
         }
         public void Dispose()
         {
-            throw new NotImplementedException();
-        }  
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
     }
 }

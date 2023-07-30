@@ -17,6 +17,7 @@ namespace films_server.Apis
                 .Produces<Movie>(StatusCodes.Status200OK)
                 .WithName("GetMovie")
                 .WithTags("Getters");
+
             app.MapPost("/movies",Post)
                 .Accepts<Movie>("application/json")
                 .Produces<Movie>(StatusCodes.Status201Created)
