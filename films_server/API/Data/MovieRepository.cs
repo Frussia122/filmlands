@@ -28,14 +28,14 @@ namespace films_server.Data
                 .Include(m=>m.Actors)
                 .ToListAsync();
 
+
             HashSet<Movie> uniqueMovies = new HashSet<Movie>();
 
-            // Фильтруем повторяющиеся фильмы и добавляем их в HashSet
             foreach (Movie movie in allMovies)
             {
                 uniqueMovies.Add(movie);
             }
-            // Возвращаем список уникальных фильмов
+
             var temp = uniqueMovies.Take(count.Value).ToList(); ;
             return temp;
         }

@@ -14,10 +14,7 @@ public class MovieDb : DbContext
         modelBuilder.Entity<Movie>()
             .Property(m => m.Id)
             .ValueGeneratedOnAdd();
-        // Repeat the above for other entities with identity columns, if needed.
     }
-
-
 }
 
 

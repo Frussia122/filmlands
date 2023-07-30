@@ -2,6 +2,7 @@ using Azure.Identity;
 using films_server.Apis;
 using films_server.Auth;
 using films_server.Data;
+using films_server.Data.SeriesModel;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -45,7 +46,14 @@ void RegisterServices(IServiceCollection services)
     {
         options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDBConnection"));
     });
+
+    services.AddDbContext<SeriesDb>(options =>
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDBConnection"));
+    });
+
     services.AddScoped<IMovieRepository, MovieRepository>();
+    services.AddScoped<ISeriesRepository, SeriesRepository>();
     services.AddSingleton<ITokenService>(new TokenService());
     services.AddSingleton<IUserRepository>(new UserRepository());
     services.AddAuthorization();
@@ -77,6 +85,7 @@ void RegisterServices(IServiceCollection services)
             });
     services.AddTransient<IApi, AuthApi>();
     services.AddTransient<IApi, MovieApi>();
+    services.AddTransient<IApi,  SeriesApi>();
 
 }
 
