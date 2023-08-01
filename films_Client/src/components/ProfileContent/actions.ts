@@ -39,7 +39,7 @@ export const ActionsData: ProfileActions[] = [
     {
         name: 'Уведомления',
         icon: faBell,
-        link: 'subscription',
+        link: 'notification',
         state: 'Уведомления'
         },
     {
