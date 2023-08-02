@@ -4,7 +4,7 @@ namespace films_server.Auth
 {
     public class TokenService : ITokenService
     {
-        private TimeSpan ExpiryDuration = new TimeSpan(3, 0, 0);
+        private TimeSpan ExpiryDuration = new TimeSpan(720, 0, 0);
         public string buildToken(string key, string issuer, UserDto user)
         {
             var claims = new[]

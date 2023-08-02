@@ -8,7 +8,7 @@
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://win6052.site4now.net:21/api</_PublishTargetUrl>
-    <History>True|2023-07-26T18:14:12.4698093Z;</History>
+    <History>True|2023-07-30T11:26:18.7318687Z;True|2023-07-26T21:14:12.4698093+03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -19,22 +19,22 @@
       <publishTime>07/23/2023 16:13:19</publishTime>
     </File>
     <File Include="Azure.Core.dll">
-      <publishTime>04/05/2022 00:38:56</publishTime>
+      <publishTime>05/04/2022 00:38:56</publishTime>
     </File>
     <File Include="Azure.Identity.dll">
-      <publishTime>04/05/2022 23:26:00</publishTime>
+      <publishTime>05/04/2022 23:26:00</publishTime>
     </File>
     <File Include="films_server.deps.json">
-      <publishTime>07/26/2023 21:12:59</publishTime>
+      <publishTime>07/30/2023 14:25:35</publishTime>
     </File>
     <File Include="films_server.dll">
-      <publishTime>07/26/2023 21:12:59</publishTime>
+      <publishTime>07/30/2023 14:25:33</publishTime>
     </File>
     <File Include="films_server.exe">
-      <publishTime>07/26/2023 21:12:59</publishTime>
+      <publishTime>07/30/2023 14:25:34</publishTime>
     </File>
     <File Include="films_server.pdb">
-      <publishTime>07/26/2023 21:12:59</publishTime>
+      <publishTime>07/30/2023 14:25:33</publishTime>
     </File>
     <File Include="films_server.runtimeconfig.json">
       <publishTime>07/21/2023 20:03:35</publishTime>
@@ -64,25 +64,25 @@
       <publishTime>06/22/2022 22:59:58</publishTime>
     </File>
     <File Include="Microsoft.Identity.Client.Extensions.Msal.dll">
-      <publishTime>11/20/2021 01:02:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Abstractions.dll">
-      <publishTime>07/12/2023 21:11:50</publishTime>
+      <publishTime>12/07/2023 21:11:50</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
-      <publishTime>07/12/2023 20:40:10</publishTime>
+      <publishTime>12/07/2023 20:40:10</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Logging.dll">
-      <publishTime>07/12/2023 20:42:36</publishTime>
+      <publishTime>12/07/2023 20:42:36</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Protocols.dll">
-      <publishTime>07/01/2022 21:29:14</publishTime>
+      <publishTime>01/07/2022 21:29:14</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll">
-      <publishTime>07/01/2022 21:39:00</publishTime>
+      <publishTime>01/07/2022 21:39:00</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Tokens.dll">
-      <publishTime>07/12/2023 20:54:20</publishTime>
+      <publishTime>12/07/2023 20:54:20</publishTime>
     </File>
     <File Include="Microsoft.OpenApi.dll">
       <publishTime>08/29/2020 23:14:12</publishTime>
@@ -94,7 +94,7 @@
       <publishTime>10/19/2020 21:40:26</publishTime>
     </File>
     <File Include="Newtonsoft.Json.dll">
-      <publishTime>03/08/2023 10:09:54</publishTime>
+      <publishTime>08/03/2023 10:09:54</publishTime>
     </File>
     <File Include="runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll">
       <publishTime>10/19/2020 21:49:58</publishTime>
@@ -103,16 +103,16 @@
       <publishTime>03/31/2023 20:51:28</publishTime>
     </File>
     <File Include="runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>10/04/2022 01:45:42</publishTime>
+      <publishTime>04/10/2022 01:45:42</publishTime>
     </File>
     <File Include="runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>10/04/2022 01:45:32</publishTime>
+      <publishTime>04/10/2022 01:45:32</publishTime>
     </File>
     <File Include="runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>10/04/2022 01:45:32</publishTime>
+      <publishTime>04/10/2022 01:45:32</publishTime>
     </File>
     <File Include="runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll">
-      <publishTime>10/04/2022 01:45:32</publishTime>
+      <publishTime>04/10/2022 01:45:32</publishTime>
     </File>
     <File Include="runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll">
       <publishTime>10/19/2020 21:52:12</publishTime>
@@ -133,13 +133,13 @@
       <publishTime>10/19/2020 21:49:30</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.Swagger.dll">
-      <publishTime>01/11/2023 09:48:22</publishTime>
+      <publishTime>11/01/2023 09:48:22</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
-      <publishTime>01/11/2023 09:48:26</publishTime>
+      <publishTime>11/01/2023 09:48:26</publishTime>
     </File>
     <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
-      <publishTime>01/11/2023 09:49:02</publishTime>
+      <publishTime>11/01/2023 09:49:02</publishTime>
     </File>
     <File Include="System.Configuration.ConfigurationManager.dll">
       <publishTime>10/19/2020 21:52:30</publishTime>
@@ -148,10 +148,10 @@
       <publishTime>10/19/2020 21:50:02</publishTime>
     </File>
     <File Include="System.IdentityModel.Tokens.Jwt.dll">
-      <publishTime>07/12/2023 20:32:56</publishTime>
+      <publishTime>12/07/2023 20:32:56</publishTime>
     </File>
     <File Include="System.Memory.Data.dll">
-      <publishTime>04/08/2021 19:45:54</publishTime>
+      <publishTime>08/04/2021 19:45:54</publishTime>
     </File>
     <File Include="System.Runtime.Caching.dll">
       <publishTime>10/19/2020 21:52:34</publishTime>
@@ -166,7 +166,7 @@
       <publishTime>10/19/2020 21:53:38</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>07/26/2023 21:13:09</publishTime>
+      <publishTime>07/30/2023 14:25:45</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -18,8 +18,8 @@ namespace films_server.Data
         {
             if(httpContext == null) return new List<Movie>();
 
-            int? count = httpContext.Request.Query.TryGetValue("count", out var values) ?
-                     int.Parse(values.ToString()) :10;
+            int? count = httpContext.Request.Query.TryGetValue("limit", out var values) ?
+                     int.Parse(values.ToString()) :200;
 
             var allMovies = await _context.Movies
                 .Include(m=>m.Poster)
