@@ -18,7 +18,7 @@ class UserService {
 
     const userRole = await RoleModel.findOne({value: "USER"})
     const user = await UserModel.create({email, password: hashPassword, activationLink , role:[userRole.value]}) 
-    await mailService.sendActivationMail(email,`https://thankful-scarf-pike.cyclic.app/api/activate/${activationLink}`);
+    await mailService.sendActivationMail(email,`https://perfect-earrings-fish.cyclic.app/api/activate/${activationLink}`);
 
     const userDto = new UserDto(user);
     const tokens = tokenService.generateTokens({...userDto});
