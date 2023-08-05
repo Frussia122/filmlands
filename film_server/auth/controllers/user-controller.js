@@ -1,6 +1,7 @@
 const userService = require('../service/user-service');
-const UserService = require('../service/user-service')
-const mailService = require('../service/mail-service')
+const mailService = require('../service/mail-service');
+const userModel = require('../models/user-model');
+const roleModel = require('../models/Role-model')
 const{validationResult} = require('express-validator');
 const ApiError = require('../exception/api-error');
 

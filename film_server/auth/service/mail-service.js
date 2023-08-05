@@ -4,7 +4,7 @@ const SMTP_HOST = "smtp.gmail.com";
 const SMPT_PORT = 587;
 const SMPT_USER = "reelofilm@gmail.com";
 const SMPT_PASSWORD = "wfmehdukpzvbemmm";
-const API_URL = "http://localhost:5000"
+const API_URL = "https://thankful-scarf-pike.cyclic.app"
 const CLIENT_URL = "http://localhost:3000"
 
 class MailService {
