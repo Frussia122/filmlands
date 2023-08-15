@@ -24,6 +24,7 @@ import MainLayout from 'components/MainLayout/index';
 import ProfileLayout from 'components/ProfileLayout';
 import ProfileSubscription from 'components/ProfileSubscription';
 import ProfileNotification from 'components/ProfileNotification';
+import CollectionTypePage from 'components/CollectionTypePage';
 
 
 
@@ -50,6 +51,10 @@ function App() {
         <Route path={LatestUrl} element={<Latest />}/>
         <Route path={FavoriteUrl} element={<MyList />}/>
         <Route path={CollectionUrl} element={<Collection />} />
+        <Route path={`${CollectionUrl}/Series`} element={<CollectionTypePage type={'Series'} />} />
+        <Route path={`${CollectionUrl}/Films`} element={<CollectionTypePage type={'Fims'}/>} />
+        <Route path={`${CollectionUrl}/Child`} element={<CollectionTypePage type={'Child'}/>} />
+
         <Route path={`${CollectionUrl}/:id`} element={<SingleMovie />} />
       </Route>
       <Route path={ProfileUrl} element={<ProfileLayout />} >
