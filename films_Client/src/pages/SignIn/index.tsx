@@ -3,7 +3,7 @@ import {Wrapper, Background} from 'assets/Auth/styled'
 import img from 'assets/Auth/background.png';
 
 import { useDispatch } from "react-redux";
-import { registration } from "store/slices/authSlice";
+import { login } from "store/slices/authSlice";
 import { AppDispatch } from "store/store";
 
 
@@ -12,7 +12,7 @@ const SignIn: React.FC = () => {
 
     const handleClick = async (values: { email: any; password: any; }) => {
         const { email, password } = values;
-        dispatch(registration({email, password}));
+        dispatch(login({email, password}));
     };
     return (
         <Wrapper>

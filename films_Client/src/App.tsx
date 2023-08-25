@@ -25,15 +25,15 @@ import CatalogTypePage from 'components/Catalog/CatalogTypePage';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {checkAuth, isAuth} from 'store/slices/authSlice';
+import { AppDispatch } from 'store/store';
 
 function App() {
   
-  const dispatch = useDispatch();
-  const authStatus = useSelector(isAuth);
+  const dispatch = useDispatch<AppDispatch>();  const authStatus = useSelector(isAuth);
   
   useEffect(() => {
     if(localStorage.getItem('token')) {
-      checkAuth();
+      dispatch(checkAuth());
     }
   }, [])
   
@@ -48,6 +48,7 @@ function App() {
   //   console.error(error);
   // });
   // }, [])
+
 
   return (
     <>

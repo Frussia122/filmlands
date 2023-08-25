@@ -1,5 +1,5 @@
 import axios from "axios";
-export const API_URL = 'https://thankful-scarf-pike.cyclic.app/api';
+export const API_URL = 'https://perfect-earrings-fish.cyclic.app/api';
 
 
 const $api = axios.create({
