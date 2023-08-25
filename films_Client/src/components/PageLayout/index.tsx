@@ -1,6 +1,6 @@
 import Header from "components/Header";
 import Footer from "components/Footer";
-import MovieFreedom from "components/MovieFreedom";
+import MovieFreedom from "components/Movie/MovieFreedom";
 import { ReactNode } from "react";
 
 

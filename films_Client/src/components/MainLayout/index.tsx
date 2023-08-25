@@ -1,6 +1,6 @@
 import Footer from "components/Footer";
 import Header from "components/Header";
-import MovieFreedom from "components/MovieFreedom";
+import MovieFreedom from "components/Movie/MovieFreedom";
 import { Outlet } from "react-router-dom";
 
 

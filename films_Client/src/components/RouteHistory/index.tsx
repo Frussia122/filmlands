@@ -1,14 +1,15 @@
 import {Wrapper, GoBack, CurrentLocation} from './styled';
 
 type RouteHistoryProps = {
+    url: string;
     defaultState?: string;
     state?: string;
 }
 
-const RouteHistory: React.FC<RouteHistoryProps> = ({defaultState, state}) => {
+const RouteHistory: React.FC<RouteHistoryProps> = ({url,defaultState, state}) => {
     return (
         <Wrapper>
-          <GoBack to='/profile'>{defaultState}</GoBack>
+          <GoBack to={url}>{defaultState}</GoBack>
           <CurrentLocation>{state}</CurrentLocation>   
         </Wrapper>
     )

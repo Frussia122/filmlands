@@ -1,7 +1,7 @@
-import HomeSearchList from 'components/HomeSearchList';
-import HomePageSlider from 'components/HomeSlider';
+import HomeSearchList from 'components/Home/HomeSearchList';
+import HomePageSlider from 'components/Home/HomeSlider';
 import LatestMovies from 'components/LatestMovies';
-import { latestFilms } from 'components/HomeSlider/data';
+import { latestFilms } from 'components/Home/HomeSlider/data';
 import { Wrapper } from './styled';
 import { Container } from 'assets/Container/styled';
 

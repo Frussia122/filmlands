@@ -1,8 +1,7 @@
 import { 
-  FavoriteUrl,
+  CatalogUrl,
   HomeUrl,
-  LatestUrl,
-  PopularUrl,
+  
 } from 'constants/pages/urls';
 
 export type NavItem = {
@@ -16,20 +15,20 @@ export type NavItem = {
       url: HomeUrl,
     },
     {
-      title: 'Films',
-      url: FavoriteUrl,
+      title: 'Catalog',
+      url: CatalogUrl,
     },
     {
-      title: 'TV Series',
-      url: LatestUrl,
+      title: 'Catalog',
+      url: CatalogUrl,
     }
     ,
     {
-      title: 'Kids',
-      url: PopularUrl,
+      title: 'Catalog',
+      url: CatalogUrl,
     },
     {
-      title: 'TV',
+      title: 'Catalog',
       url: '/tv',
     }
   ];

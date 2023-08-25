@@ -6,4 +6,4 @@ export const FavoriteUrl = '/favorites';
 export const SignInUrl = '/sign-in';
 export const SignUpUrl = '/sign-up';
 export const ProfileUrl = '/profile';
-export const CollectionUrl = '/collection';
+export const CatalogUrl = '/catalog';

@@ -1,7 +1,7 @@
 import HomePage from 'pages/HomePage/index';
 import Latest from 'pages/Latest/index';
 import MyList from 'pages/MyList/index';
-import Collection from 'pages/Collection';
+import Catalog from 'pages/Catalog';
 import SignIn from 'pages/SignIn';
 import SignUp from 'pages/SignUp';
 import Profile from 'pages/Profile/index';
@@ -13,15 +13,15 @@ import {
   LatestUrl,
   SignInUrl,
   SignUpUrl,
-  CollectionUrl,
+  CatalogUrl,
   ProfileUrl
 } from 'constants/pages/urls';
 import SingleMovie from 'components/SingleMovie';
 import MainLayout from 'components/MainLayout/index';
-import ProfileLayout from 'components/ProfileLayout';
-import ProfileSubscription from 'components/ProfileSubscription';
-import ProfileNotification from 'components/ProfileNotification';
-import CollectionTypePage from 'components/CollectionTypePage';
+import ProfileLayout from 'components/Profile/ProfileLayout';
+import ProfileSubscription from 'components/Profile/ProfileSubscription';
+import ProfileNotification from 'components/Profile/ProfileNotification';
+import CatalogTypePage from 'components/Catalog/CatalogTypePage';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {checkAuth, isAuth} from 'store/slices/authSlice';
@@ -57,12 +57,12 @@ function App() {
         <Route index element={<HomePage />}/>
         <Route path={LatestUrl} element={<Latest />}/>
         <Route path={FavoriteUrl} element={<MyList />}/>
-        <Route path={CollectionUrl} element={<Collection />} />
-        <Route path={`${CollectionUrl}/Series`} element={<CollectionTypePage type={'Series'} />} />
-        <Route path={`${CollectionUrl}/Films`} element={<CollectionTypePage type={'Fims'}/>} />
-        <Route path={`${CollectionUrl}/Child`} element={<CollectionTypePage type={'Child'}/>} />
+        <Route path={CatalogUrl} element={<Catalog />} />
+        <Route path={`${CatalogUrl}/Series`} element={<CatalogTypePage type={'Series'} />} />
+        <Route path={`${CatalogUrl}/Films`} element={<CatalogTypePage type={'Films'}/>} />
+        <Route path={`${CatalogUrl}/Child`} element={<CatalogTypePage type={'Child'}/>} />
 
-        <Route path={`${CollectionUrl}/:id`} element={<SingleMovie />} />
+        <Route path={`${CatalogUrl}/:id`} element={<SingleMovie />} />
       </Route>
       <Route path={ProfileUrl} element={<ProfileLayout />} >
         <Route index element={<Profile />} />

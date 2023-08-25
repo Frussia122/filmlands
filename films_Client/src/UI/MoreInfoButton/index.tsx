@@ -5,7 +5,7 @@ type MoreINfoButtonProps = {
 }
 const MoreInfoButton: React.FC<MoreINfoButtonProps> = ({id}) => {
     return (
-        <Info to={`/collection/${id}`}>More info</Info>
+        <Info to={`/catalog/${id}`}>More info</Info>
     );
 }
 export default MoreInfoButton;

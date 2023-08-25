@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from '../store';
-import {Latest} from 'components/HomeSlider/data';
+import {Latest} from 'components/Home/HomeSlider/data';
 
 interface CurrentFilmState {
     activeMovie: Latest | null; 

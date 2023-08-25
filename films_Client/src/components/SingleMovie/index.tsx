@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import  {latestFilms} from 'components/HomeSlider/data'
+import  {latestFilms} from 'components/Home/HomeSlider/data'
 import { 
     Wrapper,
  } from "./styled";
 import { useEffect } from "react";
-import MovieTabs from "components/MovieTabs";
-import MovieVideo from "components/MovieBackground";
-import MovieContent from "components/MovieContent";
+import MovieTabs from "components/Movie/MovieTabs";
+import MovieVideo from "components/Movie/MovieBackground";
+import MovieContent from "components/Movie/MovieContent";
 import { useDispatch, useSelector } from 'react-redux';
 import { setActiveFilm, currentFilm } from 'store/slices/currentFilmSlice';
 

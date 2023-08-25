@@ -1,6 +1,6 @@
 import { Container } from 'assets/Container/styled';
-import ProfileHeader from 'components/ProfileHeader';
-import ProfileContent from 'components/ProfileContent';
+import ProfileHeader from 'components/Profile/ProfileHeader';
+import ProfileContent from 'components/Profile/ProfileContent';
 import {
     Wrapper,
 } from './styled';
