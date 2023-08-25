@@ -9,7 +9,7 @@ DB_URL ='mongodb+srv://root:k46KovkUKwl3U8bk@cluster0.hf3bmfc.mongodb.net/?retry
 
 const PORT = 5000;
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:'http://localhost:3000/sign-in', 
     credentials:true,            //access-control-allow-credentials:true
     optionsSuccessStatus:200
 }
