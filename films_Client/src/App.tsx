@@ -1,11 +1,9 @@
 import HomePage from 'pages/HomePage/index';
-import Popular from 'pages/Popular';
 import Latest from 'pages/Latest/index';
 import MyList from 'pages/MyList/index';
 import Collection from 'pages/Collection';
 import SignIn from 'pages/SignIn';
 import SignUp from 'pages/SignUp';
-import { useCookies } from 'react-cookie';
 import Profile from 'pages/Profile/index';
 import { Routes, Route } from 'react-router-dom';
 
@@ -13,7 +11,6 @@ import {
   FavoriteUrl,
   HomeUrl,
   LatestUrl,
-  PopularUrl,
   SignInUrl,
   SignUpUrl,
   CollectionUrl,
@@ -25,11 +22,20 @@ import ProfileLayout from 'components/ProfileLayout';
 import ProfileSubscription from 'components/ProfileSubscription';
 import ProfileNotification from 'components/ProfileNotification';
 import CollectionTypePage from 'components/CollectionTypePage';
-
-
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {checkAuth, isAuth} from 'store/slices/authSlice';
 
 function App() {
-  const [cookies] = useCookies(['myCookie']);
+  
+  const dispatch = useDispatch();
+  const authStatus = useSelector(isAuth);
+  
+  useEffect(() => {
+    if(localStorage.getItem('token')) {
+      checkAuth();
+    }
+  }, [])
   
   // useEffect(() => {
   //   axios.get('http://bebracoderr-001-site1.ctempurl.com/movies?api-key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSm9objMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjRmOTdmNDNlLTY1OGEtNDVhZS1hMjFjLTBmZWYxYTM5ZWEyZiIsImV4cCI6MTY4OTk3MzAwMSwiaXNzIjoiUGxhdGludW0iLCJhdWQiOiJQbGF0aW51bSJ9.2gFeFXhO0FQ_TzRXzCemJPB1wiUZHr9_cu_DOa4tFRw', {
@@ -45,6 +51,7 @@ function App() {
 
   return (
     <>
+    <h1>{authStatus ? 'Пользователь авторизован' : 'Пользователь не авторизован'}</h1>
     <Routes>
       <Route path={HomeUrl} element={<MainLayout />}>  
         <Route index element={<HomePage />}/>

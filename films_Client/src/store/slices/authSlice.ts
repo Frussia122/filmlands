@@ -1,7 +1,10 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "store/store";
 import {IUser} from 'models/IUser';
 import AuthService from "services/AuthService";
+import axios from "axios";
+import { API_URL } from "http/index";
+import { AuthResponse } from "models/response/AuthResponse";
 
 export const login = createAsyncThunk<IUser, { email: string, password: string }>(
     "auth/login",
@@ -38,6 +41,20 @@ export const login = createAsyncThunk<IUser, { email: string, password: string }
             localStorage.removeItem('token');
           } catch (error: any) {
             return error.response?.data?.message;
+          }
+    }
+  );
+
+  export const checkAuth = createAsyncThunk(
+    "auth/checkAuth",
+    async () => {
+        try {
+           const response = await axios.get<AuthResponse>(`${API_URL}/refresh`, {withCredentials: true})
+           localStorage.setItem('token', response.data.accessToken);
+
+           return response.data.user;
+          } catch (error: any) {
+            console.log(error.response?.data?.message);
           }
     }
   );
@@ -81,8 +98,15 @@ const authSlice = createSlice({
         builder.addCase(logout.rejected, (state,action) => {
            console.error('Error', action.error)
         })
+        builder.addCase(checkAuth.fulfilled, (state,action) => {
+          state.isAuth = true;
+      })
+      builder.addCase(checkAuth.rejected, (state,action) => {
+        state.isAuth = false;
+      })
     }
 })
 
 export default authSlice;
 
+export const isAuth = (state: RootState) => state.auth.isAuth;

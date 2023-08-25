@@ -1,15 +1,22 @@
-import AuthenticationForm from "components/AuntificationForm";
+import AuthForm from "components/AuntificationForm/index";
 import {Wrapper, Background} from 'assets/Auth/styled'
 import img from 'assets/Auth/background.png';
 
-const SignIn: React.FC = () => {
+import { useDispatch } from "react-redux";
+import { registration } from "store/slices/authSlice";
+import { AppDispatch } from "store/store";
 
-    const handleClick = (values: object) => {
-        console.log(values)
-    }
+
+const SignIn: React.FC = () => {
+    const dispatch = useDispatch<AppDispatch>();
+
+    const handleClick = async (values: { email: any; password: any; }) => {
+        const { email, password } = values;
+        dispatch(registration({email, password}));
+    };
     return (
         <Wrapper>
-            <AuthenticationForm handleClick={handleClick} type="Sign In" />
+            <AuthForm handleClick={handleClick} type="Sign In" />
             <Background src={img} />
         </Wrapper>
     )

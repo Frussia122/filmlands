@@ -12,7 +12,7 @@ import {
 import {LoginFormProps, FormValues, initialValues, validationSchema} from './configuration';
 
 
-const LoginForm: React.FC<LoginFormProps> = ({ handleClick, type }) => {
+const AuthForm: React.FC<LoginFormProps> = ({ handleClick, type }) => {
 
   const handleSubmit = (values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
     if(type === 'Sign In') {
@@ -61,4 +61,4 @@ const LoginForm: React.FC<LoginFormProps> = ({ handleClick, type }) => {
   );
 };
 
-export default LoginForm;
+export default AuthForm;

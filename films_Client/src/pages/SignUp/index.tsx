@@ -1,4 +1,4 @@
-import AuthenticationForm from "components/AuntificationForm";
+import AuthForm from "components/AuntificationForm/index";
 import {Wrapper, Background} from 'assets/Auth/styled'
 import img from 'assets/Auth/background.png';
 
@@ -9,7 +9,7 @@ const SignUp: React.FC = () => {
     }
     return (
         <Wrapper>
-            <AuthenticationForm handleClick={handleClick} type="Sign Up" />
+            <AuthForm handleClick={handleClick} type="Sign Up" />
             <Background src={img} />
         </Wrapper>
     )

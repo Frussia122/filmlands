@@ -22,6 +22,7 @@ export const TypeBlock = styled.div`
     border-radius: 9px;
     transition: all 0.1s linear;
     cursor: pointer;
+    
     &:after{
         position: absolute;
         content: '';
@@ -43,9 +44,11 @@ export const TypeBlock = styled.div`
 `
 export const Background = styled.img`
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 90%;
+    bottom: 12px;
     border-radius: 12px;
+    
 `
 
 export const Type = styled.button`
