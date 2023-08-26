@@ -1,13 +1,16 @@
 # Filmsland - Online Cinema
 
+![Filmsland Logo](link_to_logo_image)
 
 Welcome to Filmsland - your cozy online cinema! Here you can enjoy the most captivating movies and TV shows in a user-friendly interface. Regardless of your preferences, we have a wide selection of content to satisfy even the most demanding viewers.
 
 ## About the Project
 
-Filmsland is a web application developed using modern technologies to provide you with the best movie-watching experience. Built on the React framework, the app utilizes Redux Toolkit (RTK) and React Query libraries for efficient state management and data fetching.
+Filmsland is a web application developed using modern technologies to provide you with the best movie-watching experience. Built on the React framework, the app utilizes Redux Toolkit (RTK) and axios for state management and data fetching. React Router DOM is used for navigation.
 
-For the backend of the project, we employed powerful tools: ASP.NET for creating our custom movie API, as well as Node.js for implementing the user authentication and registration system.
+For the backend of the project, we employed powerful tools: ASP.NET for creating our custom movie API with a MySQL database, as well as Node.js for implementing the user authentication and registration system. While currently using MongoDB for user data, it will eventually transition to MySQL as well.
+
+Formik and Yup were utilized for form validation, ensuring a smooth user experience. TypeScript has been adopted for comprehensive type definitions.
 
 ## Current Status
 
@@ -35,8 +38,8 @@ We aspire to make Filmsland the premier destination for online movie-watching, a
 
 ## Technologies
 
-- Frontend: React, Redux Toolkit (RTK), React Query (Branch: FrontDev)
-- Backend: ASP.NET (Movie API - Branch: BackDev), Node.js (Authentication and Registration - Branch: BackDevAuth)
+- Frontend: React, Redux Toolkit (RTK), axios, React Router DOM, Formik, Yup, TypeScript (Branch: FrontDev)
+- Backend: ASP.NET (Movie API with MySQL), Node.js (Authentication and Registration with MongoDB - transitioning to MySQL) (Branches: BackDev, BackDevAuth)
 
 ## Installation and Running
 
@@ -44,5 +47,3 @@ We aspire to make Filmsland the premier destination for online movie-watching, a
 2. Navigate to the project directory: `cd filmsland`
 3. Install dependencies: `npm install`
 4. Start the application: `npm start`
-
-*This description is accurate as of the Cutoff date. Project information may be subject to updates.*
