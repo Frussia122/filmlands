@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AuthResponse } from "models/response/AuthResponse";
-export const API_URL = 'https://perfect-earrings-fish.cyclic.app/api';
+export const API_URL = 'https://rich-red-bull-hose.cyclic.cloud/api';
 
 
 const $api = axios.create({
