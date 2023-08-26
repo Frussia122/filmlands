@@ -17,7 +17,7 @@ const app = express()
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:'https://filmlands-e0cff8jgc-frussia122.vercel.app', 
+    origin:'https://filmlands.vercel.app', 
     credentials:true
 }));
 app.use('/api',router);
