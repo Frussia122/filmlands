@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   category: categoryReducer,
   userCookie: userCookieReducer,
   activeFilm: activeFilmReducer,
-  auth: authSlice.reducer,
+  auth: authSlice,
 });
 
 export const store = configureStore({

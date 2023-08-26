@@ -23,13 +23,13 @@ import ProfileSubscription from 'components/Profile/ProfileSubscription';
 import ProfileNotification from 'components/Profile/ProfileNotification';
 import CatalogTypePage from 'components/Catalog/CatalogTypePage';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {checkAuth, isAuth} from 'store/slices/authSlice';
+import { useDispatch } from 'react-redux';
+import {checkAuth} from 'store/slices/authSlice';
 import { AppDispatch } from 'store/store';
 
 function App() {
   
-  const dispatch = useDispatch<AppDispatch>();  const authStatus = useSelector(isAuth);
+  const dispatch = useDispatch<AppDispatch>(); 
   
   useEffect(() => {
     if(localStorage.getItem('token')) {
@@ -52,7 +52,6 @@ function App() {
 
   return (
     <>
-    <h1>{authStatus ? 'Пользователь авторизован' : 'Пользователь не авторизован'}</h1>
     <Routes>
       <Route path={HomeUrl} element={<MainLayout />}>  
         <Route index element={<HomePage />}/>
@@ -67,6 +66,7 @@ function App() {
       </Route>
       <Route path={ProfileUrl} element={<ProfileLayout />} >
         <Route index element={<Profile />} />
+        <Route path={`${ProfileUrl}/edit`} element={<ProfileSubscription />} />
         <Route path={`${ProfileUrl}/subscription`} element={<ProfileSubscription />} />
         <Route path={`${ProfileUrl}/notification`} element={<ProfileNotification />} />
 
