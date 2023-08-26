@@ -7,7 +7,7 @@ const errorMiddleware= require('./middlewares/error-middleware');
 
 DB_URL ='mongodb+srv://root:k46KovkUKwl3U8bk@cluster0.hf3bmfc.mongodb.net/?retryWrites=true&w=majority';
 
-const PORT = 3000;
+const PORT = 5000;
 const corsOptions ={
     origin:'http://localhost:3000', 
     credentials:true,            //access-control-allow-credentials:true
