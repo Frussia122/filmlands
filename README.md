@@ -1,6 +1,5 @@
 # Filmsland - Online Cinema
 
-![Filmsland Logo](link_to_logo_image)
 
 Welcome to Filmsland - your cozy online cinema! Here you can enjoy the most captivating movies and TV shows in a user-friendly interface. Regardless of your preferences, we have a wide selection of content to satisfy even the most demanding viewers.
 
