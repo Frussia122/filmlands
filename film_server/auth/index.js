@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const router = require('./router/index');
 const errorMiddleware= require('./middlewares/error-middleware');
+const httpProxy = require('express-http-proxy');
 
 DB_URL ='mongodb+srv://root:k46KovkUKwl3U8bk@cluster0.hf3bmfc.mongodb.net/?retryWrites=true&w=majority';
 
@@ -15,6 +16,9 @@ const PORT = 5000;
 const app = express()
 
 app.use(express.json());
+app.use('/api', httpProxy('https://rich-red-bull-hose.cyclic.cloud', {
+    proxyReqPathResolver: (req) => `/api${req.url}`
+}));
 app.use(cookieParser());
 app.use(cors({
     origin:'https://filmlands.vercel.app', 
